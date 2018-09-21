@@ -4,7 +4,7 @@
 
 詳細流程 [gradle-maven-push](https://github.com/chrisbanes/gradle-mvn-push) 都已有詳細內容，這裡僅做一些重點整理。
 
-1. 在專案根目錄的`gradle.properties`中加入以下資訊
+#### 1. 在專案根目錄的`gradle.properties`中加入以下資訊
 ```properties
 VERSION_NAME=1.0.0
 VERSION_CODE=1
@@ -27,7 +27,7 @@ POM_DEVELOPER_NAME=Arxing
 RELEASE_REPOSITORY_URL=file://S://maven-repository
 SNAPSHOT_REPOSITORY_URL=file://S://maven-repository-snapshots
 ```
-2. 在每個你要發佈的module根目錄中建立`gradle.properties`並填入以下內容
+#### 2. 在每個你要發佈的module根目錄中建立`gradle.properties`並填入以下內容
 ```properties
 POM_NAME=arxing-lib
 # 此id為唯一值
@@ -35,7 +35,7 @@ POM_ARTIFACT_ID=demo-lib
 POM_PACKAGING=aar
 ```
 
-3. 在每個你要發佈的module的`build.gradle`中加入
+#### 3. 在每個你要發佈的module的`build.gradle`中加入
 ```gradle
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
 ```
@@ -55,16 +55,16 @@ tasks.withType(Javadoc) {
 }
 ```
 
-4. 最後準備發佈lib到本地maven 打開終端機並下指令
+#### 4. 最後準備發佈lib到本地maven 打開終端機並下指令
 ```bash
 $ gradlew clean build uploadArchives
 ```
 
-5. 執行成功以後會在你配置的路徑下生成文件 接著要將本地maven發佈到網路上
+#### 5. 執行成功以後會在你配置的路徑下生成文件 接著要將本地maven發佈到網路上
 
 本例的路徑為`S://maven-repository`
 
-6. 本地maven發佈至github
+#### 6. 本地maven發佈至github
 
 注意: 若您的repository設定為private的 小弟目前尚未找到方法使用 請跳至第7點
 
@@ -84,7 +84,7 @@ allprojects {
 implementation '<groupId>:<artifactId>:<version>'
 ```
 
-7. 本地maven發佈至aws s3
+#### 7. 本地maven發佈至aws s3
 
 + 在s3上建立一個bukkit或隨便找個地方存放您的maven 如建立了一個`sample.maven.repo`的bukkit
 + 將您本地的maven資料夾上傳至s3
