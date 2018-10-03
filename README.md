@@ -57,7 +57,7 @@ tasks.withType(Javadoc) {
     options.addStringOption('charSet', 'UTF-8')
 }
 ```
-<span id='publish'></span>
+<span id='publish'>12345</span>
 #### 4. 最後準備發佈lib到本地maven 打開終端機並下指令
 ```bash
 $ gradlew clean build uploadArchives
