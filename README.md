@@ -1,5 +1,8 @@
 # Maven倉庫配置筆記
 
++ [發佈](#publish)
+
+
 ## 根據 [gradle-maven-push](https://github.com/chrisbanes/gradle-mvn-push) 配置你的lib專案
 
 詳細流程 [gradle-maven-push](https://github.com/chrisbanes/gradle-mvn-push) 都已有詳細內容，這裡僅做一些重點整理。
@@ -54,7 +57,7 @@ tasks.withType(Javadoc) {
     options.addStringOption('charSet', 'UTF-8')
 }
 ```
-
+<span id='publish'></span>
 #### 4. 最後準備發佈lib到本地maven 打開終端機並下指令
 ```bash
 $ gradlew clean build uploadArchives
