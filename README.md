@@ -59,6 +59,7 @@ tasks.withType(Javadoc) {
 ```
 <h1 id='publish'></h1>
 #### 4. 最後準備發佈lib到本地maven 打開終端機並下指令
+
 ```bash
 $ gradlew clean build uploadArchives
 ```
