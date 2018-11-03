@@ -39,6 +39,10 @@ def getRepositoryPassword() {
     return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
 }
 
+def isBuildAndroidProject(){
+    return hasProperty('BUILD_ANDROID_PROJ') ? BUILD_ANDROID_PORJ : false
+}
+
 afterEvaluate { project ->
     uploadArchives {
         repositories {
@@ -107,8 +111,10 @@ afterEvaluate { project ->
         from android.sourceSets.main.java.sourceFiles
     }
 
-    artifacts {
-        archives androidSourcesJar
-        archives androidJavadocsJar
+    if(isBuildAndroidProject()){
+        artifacts {
+            archives androidSourcesJar
+            archives androidJavadocsJar
+        }
     }
 }
