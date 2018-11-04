@@ -118,6 +118,29 @@ allprojects {
 implementation '<groupId>:<artifactId>:<version>'
 ```
 
+## Maven倉庫結構
+
++ **maven根目錄**
+    + **release**
+        + **groupId**
+            + **artifactId**
+                + **version**
+                    + artifactId-version.aar
+                    + artifactId-version.aar.md5
+                    + artifactId-version.aar.sha1
+                    + artifactId-version.pom
+                    + artifactId-version.pom.md5
+                    + artifactId-version.pom.sha1
+                    + artifactId-version-javadoc.jar
+                    + artifactId-version-javadoc.jar.md5
+                    + artifactId-version-javadoc.jar.sha1
+                    + artifactId-version-sources.jar
+                    + artifactId-version-sources.jar.md5
+                    + artifactId-version-sources.jar.sha1                    
+                + maven-metadata.xml
+                + maven-metadata.xml.md5
+                + maven-metadata.xml.sha1
+    + **snapshot** (結構同release)
 
 
 
